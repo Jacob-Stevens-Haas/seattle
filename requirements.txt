@@ -5,7 +5,7 @@
 # a virtual environment with pip on Windows, run the command:
 # `python -m venv <environment name>
 # `<environment name>/Scripts/activate.bat`
-# `pip install requirements.txt`
+# `pip install -r requirements.txt`
 # On mac/linux, the second line should read:
 # `<environment name>/Scripts/activate.sh` 
 
@@ -15,9 +15,11 @@
 
 # Because different versions of packages behave differently,
 # to make sure the project works the same for everyone, 
-# you need to specify "pin" the versions of each package.
+# you need to specify ("pin") the versions of each package.
 # Yes, this means that someone may have many copies of each
-# individual package, but that is the accepted practice.
+# individual package, used for different projects, but that 
+# is the accepted practice.  Think about it like different
+# sized socket wrenches.
 
 # To understand how package versions are numbered, check out
 # https://semver.org/
