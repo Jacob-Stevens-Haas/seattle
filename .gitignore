@@ -16,6 +16,12 @@
 # Standard .gitignore templates: https://github.com/github/gitignore
 # .gitignore formatting rules: https://help.github.com/en/articles/ignoring-files
 
+# I'm adding the training folder here, since we may build a local virtual 
+# environment called training.  Because the environment is built simply using 
+# two commands, but includes a lot of files, each user should run those commands
+# separately, rather than ship the entire environment with the repository. 
+training/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
