@@ -31,4 +31,4 @@ official python rules.
 * PEP257 (docstrings):https://www.python.org/dev/peps/pep-0257/
 """
 
-city = 'Seattle'
+CITY = 'Seattle'
