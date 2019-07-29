@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Mon Jul 29 08:54:34 2019
-
-@author: 600301
+"""The needle.py module contains a constructor for a SeattleAttraction
+(e.g. a space needle).  These attractions have a single method, ride().
 """
 # Third party imports
 import pandas as pd

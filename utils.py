@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
-"""utils.py module proides functions to record rides of attractions.  The
-functions are called by a user who has created attractions and a table
-of records dynamically.
+"""utils.py module proides functions to record rides of attractions.
+
+.. _load\_records
+.. _save\_records
+.. _add\_ride
 
 Attributes:
     data_dir (pathlib Path): path to the data directory in the module.
