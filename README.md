@@ -45,12 +45,12 @@ if __name__=='main':
 ```
 
 
-
 ## Installation
-1. open Anaconda prompt
+1. Set up git from the command line (or GitHub desktop) with your credentials
+1. Clone this repository
+1. Open Anaconda prompt (Helps to use PowerBroker Admin sometimes)
 1. create a virtual environment (read requirements.txt or environment.yml)
 1. If using as a package, type `pip install -e .` from the project directory.
-1. Helps to use PowerBroker Admin sometimes.
 
 ## Prerequisites
 * A basic knowledge of python (how to import modules, assign variables)
