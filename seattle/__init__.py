@@ -32,3 +32,6 @@ official python rules.
 """
 
 CITY = 'Seattle'
+
+from seattle import needle
+from seattle import utils

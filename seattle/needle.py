@@ -44,7 +44,7 @@ class SeattleAttraction(object):
                  closing='23:59:00'):
         opening = pd.to_datetime('2019 Jan 1 '+opening)
         closing = pd.to_datetime('2019 Jan 1 '+closing)
-        if opening < closing:
+        if closing < opening:
             raise EndPrecedesStartError(needle_type, opening.time(),
                                         closing.time())
         self.needle = needle_type + ' needle'

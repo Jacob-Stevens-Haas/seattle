@@ -28,7 +28,7 @@ import pandas as pd
 data_dir = Path(__file__).parent / 'data'
 # Forces SettingWithCopyWarning to raise an exception, so that you
 # can get a traceback and exception when it happens.
-pd.set_option('mode.chained_assingment', 'raise')
+pd.options.mode.chained_assignment = 'raise'
 
 
 class EndPrecedesStartError(Exception):
