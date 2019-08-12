@@ -1,14 +1,15 @@
 # DS5K to Python Data Science Developer
-This package is an example of what a python package or project should include.
-Each file includes comments to explain what it is for, how to modify it,
-and other resources.  Not every file is necessary in every project.  Some files
-may be more useful for building a python package (e.g. \_\_init\_\_.py), others for
-applications (e.g. requirements.txt).  Regardless, you should be able to use 
-the skeleton branch of this repo as a starting point for any python project.  You
-can also take a tour of this skeleton package in order to learn about minimal working
-examples of each type of file.
+This repository is an example of what a python package or project should include.
+It is also a self-guided tour of how to build a maintainable, professional python
+code.  To that end, each file includes comments to explain what it is for, how to
+modify it, and further resources to improve the reader's understanding.  
 
-## Your Most Important Client
+Not every file is necessary in every project.  Some files may be more useful for 
+building a python package (e.g. \_\_init\_\_.py), others for applications (e.g.
+requirements.txt).  Regardless, you should be able to use the master branch of this
+repo as a starting point for any python project.  
+
+## Why? Your Most Important Client
 Sometimes, you want to build a stand-alone application that only you care about.
 So you may start with some code, but before long, you want to re-use that code
 that parsed some input.  So you copy and paste it where you need it, but later on
@@ -50,7 +51,7 @@ if __name__=='main':
 1. Clone this repository
 1. Open Anaconda prompt (Helps to use PowerBroker Admin sometimes)
 1. create a virtual environment (read requirements.txt or environment.yml)
-1. If using as a package, type `pip install -e .` from the project directory.
+1. Run `pip install -e .` from the project directory.
 
 ## Prerequisites
 * A basic knowledge of python (how to import modules, assign variables)
@@ -75,4 +76,4 @@ are gitignored.
 
 ## How to write these .md files
 [Good](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)
-[guides](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)
+[guides](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
