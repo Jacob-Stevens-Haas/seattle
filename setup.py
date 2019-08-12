@@ -30,7 +30,7 @@ This will copy the package to the environment's package directory.
 Alternatively, we can run
 `pip install -e .`
 The editable (-e) flag allows you edit this module's source code, and
-importing the module will always include the most recent .
+importing the module will always include the most recent saved version.
 
 Resources for more info:
 https://python-packaging.readthedocs.io/en/latest/minimal.html

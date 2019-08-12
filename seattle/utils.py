@@ -8,9 +8,9 @@
 Attributes:
     data_dir (pathlib Path): path to the data directory in the module.
 
-.. _Google Python Style Guide:
+Google Python Style Guide:
    http://google.github.io/styleguide/pyguide.html
-.. Much of this example comes from:
+Much of this example comes from:
     https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html
 
 """

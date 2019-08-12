@@ -7,8 +7,10 @@ If you want to start from scratch, however, here's the instructions for
 setting up automatic documentation for your project.  It's pretty hard - if
 anything differs from the steps you take or the structure of your project,
 you'll have to spend quite some time trouble-shooting how to get it right.
-Documentation online often applies to sphinx pre-2.0, which gave a lot more
-options for `sphinx-quickstart`
+You may have to spend a lot of time getting familiar with `git push --force`,
+ `git reset`, and `git revert`.  Also note that Documentation online often
+ applies to sphinx pre-2.0, which gave a lot more options for
+ `sphinx-quickstart`.
 
 1. Enter project directory
 1. enter virtual environment
@@ -18,13 +20,24 @@ options for `sphinx-quickstart`
 1. `sphinx-quickstart` (choose 'yes' to separate source and build directories).
 This will add a Makefile and a make.bat file here, as well as source/ and 
 build/ directories.
+1. In `source/index.rst`, add `   modules` under the toctree, so it looks like:
+```
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   modules
+```
+Be careful now children.  That's a three-space indent before modules.  If you
+hit the tab key, you lose.
+1. If your package is deep, change maxdepth to a bigger number.
 1. Add extensions to `source/conf.py`.  Open the file, and change line 33 to
 ```
-extensions = ['sphinx.ext.autodoc',
-            'sphinx.ext.todo',
-            'sphinx.ext.imgmath',
-            'sphinx.ext.napoleon',
-            'sphinx.ext.githubpages',
+extensions = ['sphinx.ext.autodoc', #Allows sphinx-apidoc to work right
+            'sphinx.ext.todo', #allows inline "To Do:" blocks. Optional
+            'sphinx.ext.imgmath', #Allows LaTeX equations in .rst files. Optional
+            'sphinx.ext.napoleon', #Allows google and numpy style docstrings
+            'sphinx.ext.githubpages', #Adds .nojekyll file to make it work
 ]
 ```
 1. If you did not pip install the seattle package, uncomment the lines:
@@ -46,12 +59,15 @@ put rst files, and where to find python files.
 1. `make html`
 If you get build errors, try to google them to figure out what you should change.
 Ask for help. The google group tends to be pretty responsive.
+1. Check your highest-level .gitignore file for `source/` and `build/` and remove
+them if they are present (or add an exception for `docs/source` and `docs/build`).
 1. Create a file `index.html` in docs/.  As the only line, it should have:
 ```
 <meta http-equiv="refresh" content="0; url=./build/html/index.html" />
 ```
 GitHub pages looks for an index.html file at the top of your docs/ folder.  Just
 have it redirect to docs/build/html/index.html.  
+1. Verify that you have a `docs/.nojekyll` file.  It should be empty.
 1. Push your changes to GitHub and merge with master
 1. Go to the settings tab on your github repo and enable Github Pages from the 
 master/docs folder.

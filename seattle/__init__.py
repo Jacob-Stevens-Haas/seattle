@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """
-### __init__.py
+===========
+__init__.py
+===========
 This is an __init__.py  file.  This file is run whenever the package
 is imported.  Names (variables, functions, etc) declared here are
 available in the package namespace.  That means that if you start
@@ -28,7 +30,9 @@ numpy style and google style.  We'll use google style.
 * Google style guide: http://google.github.io/styleguide/pyguide.html
 PEP - Python Enhancement Proposal.  Accepted PEPs become part of
 official python rules.
+
 * PEP257 (docstrings):https://www.python.org/dev/peps/pep-0257/
+
 """
 
 CITY = 'Seattle'

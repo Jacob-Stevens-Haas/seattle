@@ -1,6 +1,6 @@
 @ECHO OFF
 
-sphinx-apidoc -f -o source .. ../setup.py
+sphinx-apidoc -f -e -o source .. ../setup.py
 
 pushd %~dp0
 
