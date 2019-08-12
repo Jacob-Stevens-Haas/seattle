@@ -41,7 +41,7 @@ class SeattleAttraction(object):
     """
 
     def __init__(self, needle_type='space', opening='08:00:00',
-                 closing='23:59:00'):
+                 closing='23:59:59'):
         opening = pd.to_datetime('2019 Jan 1 '+opening)
         closing = pd.to_datetime('2019 Jan 1 '+closing)
         if closing < opening:
@@ -60,10 +60,11 @@ class SeattleAttraction(object):
                 ``08:00:00``
             end (str): when you try to finish riding
         """
+        if pd.to_datetime(end) <= pd.to_datetime(start):
+            raise EndPrecedesStartError(str(self), start, end)
 
-        if pd.to_datetime('2019 Jan 1 '+start).time < self.opening:
-            raise self.AfterHoursError(start, 'early')
-        elif pd.to_datetime('2019 Jan 1 '+end).time > self.closing:
-            raise self.AfterHoursError(end, 'late')
+        if pd.to_datetime('2019 Jan 1 '+start).time() < self.opening:
+            raise AfterHoursError(self, 'early')
+        elif pd.to_datetime('2019 Jan 1 '+end).time() > self.closing:
+            raise AfterHoursError(self, 'late')
         return self.needle
-

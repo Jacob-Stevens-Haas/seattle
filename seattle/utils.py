@@ -25,7 +25,7 @@ import pandas as pd
 # to join file paths.
 # On python 3.6+, you can open Path objects directly, rather than
 # having to cast the Path as a str first.
-data_dir = Path(__file__).parent / 'data'
+data_dir = Path(__file__).parent.parent / 'data'
 # Forces SettingWithCopyWarning to raise an exception, so that you
 # can get a traceback and exception when it happens.
 pd.options.mode.chained_assignment = 'raise'
@@ -67,7 +67,7 @@ class EndPrecedesStartError(Exception):
                         ' but start must preceed end.  Please note that ',
                         'all rides must close before midnight.')
 
-def load_records(rec_file = 'records.csv'):
+def load_records(rec_file =  'records.csv'):
     """Loads records from the saved data.
 
     Args:
@@ -84,7 +84,7 @@ def load_records(rec_file = 'records.csv'):
         return pd.DataFrame([],
                 columns=['person', 'attraction', 'start', 'end'])
 
-    df = pd.read_csv(str(data_dir / rec_file))
+    df = pd.read_csv(data_dir / rec_file)
     assert len({'person','attraction','start','end'}-set(df.columns)
                 ) == 0, str(rec_file) + " is missing some columns"
     return df
@@ -111,12 +111,10 @@ def add_ride(records, attraction, person, start, end):
         New records DataFrame with record appended
     """
 
-    start = pd.to_datetime(start)
-    end = pd.to_datetime(end)
-    if end <= start:
+    if pd.to_datetime(end) <= pd.to_datetime(start):
         raise EndPrecedesStartError(str(attraction), start, end)
 
     #include line breaks every 80 characters
     return records.append(pd.DataFrame(
-            [person, attraction.ride(start, end), start, end],
+            [[person, attraction.ride(start, end), start, end]],
                     columns=['person', 'attraction', 'start', 'end']))
