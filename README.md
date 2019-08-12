@@ -52,6 +52,7 @@ if __name__=='main':
 1. Open Anaconda prompt (Helps to use PowerBroker Admin sometimes)
 1. create a virtual environment (read requirements.txt or environment.yml)
 1. Run `pip install -e .` from the project directory.
+1. Test that everything is copacetic with `python -m unittest test/test.py`
 
 ## Prerequisites
 * A basic knowledge of python (how to import modules, assign variables)
@@ -63,10 +64,11 @@ if __name__=='main':
 1. .gitignore
 1. requirements.txt, environment.yml, and setup.py
 1. \_\_init\_\_.py
-1. utils.py
-1. needle.py
+1. notebooks/examply.ipynb
+1. seattle/utils.py
+1. seattle/needle.py
 1. test/test.py
-1. docs/index.rst
+1. docs/README.md
 1. LICENSE.md
 1. CONTRIBUTING.md
 1. vis.py
