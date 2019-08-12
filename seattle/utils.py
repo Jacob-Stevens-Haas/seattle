@@ -1,17 +1,15 @@
 # -*- coding: utf-8 -*-
 """utils.py module proides functions to record rides of attractions.
 
-.. _load\_records
-.. _save\_records
-.. _add\_ride
+.. \_load\_records
+.. \_save\_records
+.. \_add\_ride
 
 Attributes:
     data_dir (pathlib Path): path to the data directory in the module.
 
-Google Python Style Guide:
-   http://google.github.io/styleguide/pyguide.html
-Much of this example comes from:
-    https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html
+Google Python Style Guide: http://google.github.io/styleguide/pyguide.html
+Much of this example comes from: https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html
 
 """
 # Standard library imports

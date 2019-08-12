@@ -14,6 +14,7 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="seattle.app module" href="seattle.app.html" />
     <link rel="prev" title="seattle" href="modules.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -35,170 +36,19 @@
 <h1>seattle package<a class="headerlink" href="#seattle-package" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="seattle.app.html">seattle.app module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seattle.needle.html">seattle.needle module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seattle.utils.html">seattle.utils module</a></li>
+</ul>
 </div>
-<div class="section" id="module-seattle.app">
-<span id="seattle-app-module"></span><h2>seattle.app module<a class="headerlink" href="#module-seattle.app" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="module-seattle.needle">
-<span id="seattle-needle-module"></span><h2>seattle.needle module<a class="headerlink" href="#module-seattle.needle" title="Permalink to this headline">¶</a></h2>
-<p>The needle.py module contains a constructor for a SeattleAttraction
-(e.g. a space needle).  These attractions have a single method, ride().</p>
-<dl class="exception">
-<dt id="seattle.needle.AfterHoursError">
-<em class="property">exception </em><code class="sig-prename descclassname">seattle.needle.</code><code class="sig-name descname">AfterHoursError</code><span class="sig-paren">(</span><em class="sig-param">needle</em>, <em class="sig-param">early_or_late</em><span class="sig-paren">)</span><a class="headerlink" href="#seattle.needle.AfterHoursError" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
-<p>An error for situations when someone tries to ride a needle when
-it’s closed.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>needle</strong> (<a class="reference internal" href="#seattle.needle.SeattleAttraction" title="seattle.needle.SeattleAttraction"><em>SeattleAttraction</em></a>) – Which needle someone tried to ride.</p></li>
-<li><p><strong>early_or_late</strong> (<em>str</em>) – Either ‘early’ or ‘late’, to indicate
-which time constraint is violated.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="class">
-<dt id="seattle.needle.SeattleAttraction">
-<em class="property">class </em><code class="sig-prename descclassname">seattle.needle.</code><code class="sig-name descname">SeattleAttraction</code><span class="sig-paren">(</span><em class="sig-param">needle_type='space'</em>, <em class="sig-param">opening='08:00:00'</em>, <em class="sig-param">closing='23:59:00'</em><span class="sig-paren">)</span><a class="headerlink" href="#seattle.needle.SeattleAttraction" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>A class for all seattle-based needle attractions</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>needle_type</strong> (<em>str</em>) – Type of needle, e.g. “space”</p></li>
-<li><p><strong>opening</strong> (<em>str</em>) – Time needle opens to public, preferably in format
-<code class="docutils literal notranslate"><span class="pre">08:00:00</span></code></p></li>
-<li><p><strong>closing</strong> (<em>str</em>) – Time needle closes to public.</p></li>
-</ul>
-</dd>
-</dl>
-<p class="rubric">Examples</p>
-<p><cite>space_needle = SeattleAttraction()</cite>
-<cite>grunge_needle = SeattleAttraction(‘Nirvana’, ‘00:00:01’, ‘03:59:59’)</cite></p>
-<dl class="method">
-<dt id="seattle.needle.SeattleAttraction.ride">
-<code class="sig-name descname">ride</code><span class="sig-paren">(</span><em class="sig-param">start</em>, <em class="sig-param">end</em><span class="sig-paren">)</span><a class="headerlink" href="#seattle.needle.SeattleAttraction.ride" title="Permalink to this definition">¶</a></dt>
-<dd><p>Validates that you can ride the needle from start to end,
-and returns the needle type.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>start</strong> (<em>str</em>) – when you try to start riding, preferably in format
-<code class="docutils literal notranslate"><span class="pre">08:00:00</span></code></p></li>
-<li><p><strong>end</strong> (<em>str</em>) – when you try to finish riding</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-</div>
-<div class="section" id="module-seattle.utils">
-<span id="seattle-utils-module"></span><h2>seattle.utils module<a class="headerlink" href="#module-seattle.utils" title="Permalink to this headline">¶</a></h2>
-<p>utils.py module proides functions to record rides of attractions.</p>
-<dl class="attribute">
-<dt id="seattle.utils.data_dir">
-<code class="sig-prename descclassname">seattle.utils.</code><code class="sig-name descname">data_dir</code><a class="headerlink" href="#seattle.utils.data_dir" title="Permalink to this definition">¶</a></dt>
-<dd><p>path to the data directory in the module.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>pathlib Path</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="exception">
-<dt id="seattle.utils.EndPrecedesStartError">
-<em class="property">exception </em><code class="sig-prename descclassname">seattle.utils.</code><code class="sig-name descname">EndPrecedesStartError</code><span class="sig-paren">(</span><em class="sig-param">attraction</em>, <em class="sig-param">start</em>, <em class="sig-param">end</em><span class="sig-paren">)</span><a class="headerlink" href="#seattle.utils.EndPrecedesStartError" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
-<p>This is a custom exception.  It’s useful if you might have
-similar situations in your code that you want to disallow.  Since
-you can’t predict every situation that might give rise to a
-disallowed situation, it’s helpful to create an exception.  Then,
-each block of code that gives rise to the exception can handle
-the exception differently.</p>
-<p>A classic case in point is updating a database or table with start
-and end times.  There’s nothing about a table or database’s
-engineering that prohibits a column named “end” from preceding
-a column named “start”.  Below is a function that updates the table
-for new records.  We don’t know yet whether the function will be
-called, so we don’t worry about how to handle the exception, we just
-raise it.</p>
-<p>Later, someone may write a function that calls add_ride
-based on user input in a web form.  They would want to catch the
-exception and pass the message in the web page itself.  On the other
-hand, someone might call add_ride to add a batch of rides for adding
-a batch of rides from a file.  They might want to catch the exception,
-keep adding rides for the rest of the batch, then report to the user
-all the illegal rides at once.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>attraction</strong> (<a class="reference internal" href="#seattle.needle.SeattleAttraction" title="seattle.needle.SeattleAttraction"><em>SeattleAttraction</em></a>) – Which attraction was attempted</p></li>
-<li><p><strong>start</strong> (<em>str</em><em> or </em><em>datetime.time</em>) – What start time was attempted</p></li>
-<li><p><strong>end</strong> (<em>str</em><em> or </em><em>datetime.time</em>) – What end time was attempted</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="function">
-<dt id="seattle.utils.add_ride">
-<code class="sig-prename descclassname">seattle.utils.</code><code class="sig-name descname">add_ride</code><span class="sig-paren">(</span><em class="sig-param">records</em>, <em class="sig-param">attraction</em>, <em class="sig-param">person</em>, <em class="sig-param">start</em>, <em class="sig-param">end</em><span class="sig-paren">)</span><a class="headerlink" href="#seattle.utils.add_ride" title="Permalink to this definition">¶</a></dt>
-<dd><p>Updates the records, for person to take the needle’s elevator
-up at start and down at end.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>records</strong> (<em>pandas DataFrame</em>) – The list of records of all rides</p></li>
-<li><p><strong>needle</strong> (<a class="reference internal" href="#seattle.needle.SeattleAttraction" title="seattle.needle.SeattleAttraction"><em>SeattleAttraction</em></a>) – Which needle (e.g. space)</p></li>
-<li><p><strong>person</strong> (<em>str</em>) – who is riding the elevator up and down</p></li>
-<li><p><strong>start</strong> (<em>str</em><em>, </em><em>pandas DateTime</em>) – time person embarked elevator</p></li>
-<li><p><strong>end</strong> (<em>end</em>) – time person returned to ground</p></li>
-</ul>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference internal" href="#seattle.utils.EndPrecedesStartError" title="seattle.utils.EndPrecedesStartError"><strong>EndPrecedesStartError</strong></a> – </p>
-</dd>
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>New records DataFrame with record appended</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="function">
-<dt id="seattle.utils.load_records">
-<code class="sig-prename descclassname">seattle.utils.</code><code class="sig-name descname">load_records</code><span class="sig-paren">(</span><em class="sig-param">rec_file='records.csv'</em><span class="sig-paren">)</span><a class="headerlink" href="#seattle.utils.load_records" title="Permalink to this definition">¶</a></dt>
-<dd><p>Loads records from the saved data.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>rec_file</strong> (<em>str</em>) – records file to load.  If “new”, create new
-DataFrame with appropriate columns</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>AssertionError if file's DataFrame does not have correct columns</strong> – </p>
-</dd>
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>pandas DataFrame</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="function">
-<dt id="seattle.utils.save_records">
-<code class="sig-prename descclassname">seattle.utils.</code><code class="sig-name descname">save_records</code><span class="sig-paren">(</span><em class="sig-param">df</em>, <em class="sig-param">rec_file='records.csv'</em><span class="sig-paren">)</span><a class="headerlink" href="#seattle.utils.save_records" title="Permalink to this definition">¶</a></dt>
-<dd><p>Saves records in df to rec_file.</p>
-</dd></dl>
-
 </div>
 <div class="section" id="module-seattle">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-seattle" title="Permalink to this headline">¶</a></h2>
-<p>### __init__.py
-This is an __init__.py  file.  This file is run whenever the package
+<div class="section" id="init-py">
+<h3>__init__.py<a class="headerlink" href="#init-py" title="Permalink to this headline">¶</a></h3>
+<p>This is an __init__.py  file.  This file is run whenever the package
 is imported.  Names (variables, functions, etc) declared here are
 available in the package namespace.  That means that if you start
 python, you can type</p>
@@ -223,8 +73,11 @@ numpy style and google style.  We’ll use google style.</p>
 <li><p>Google style guide: <a class="reference external" href="http://google.github.io/styleguide/pyguide.html">http://google.github.io/styleguide/pyguide.html</a></p></li>
 </ul>
 <p>PEP - Python Enhancement Proposal.  Accepted PEPs become part of
-official python rules.
-* PEP257 (docstrings):<a class="reference external" href="https://www.python.org/dev/peps/pep-0257/">https://www.python.org/dev/peps/pep-0257/</a></p>
+official python rules.</p>
+<ul class="simple">
+<li><p>PEP257 (docstrings):<a class="reference external" href="https://www.python.org/dev/peps/pep-0257/">https://www.python.org/dev/peps/pep-0257/</a></p></li>
+</ul>
+</div>
 </div>
 </div>
 
@@ -259,6 +112,7 @@ official python rules.
   <li><a href="index.html">Documentation overview</a><ul>
   <li><a href="modules.html">seattle</a><ul>
       <li>Previous: <a href="modules.html" title="previous chapter">seattle</a></li>
+      <li>Next: <a href="seattle.app.html" title="next chapter">seattle.app module</a></li>
   </ul></li>
   </ul></li>
 </ul>
