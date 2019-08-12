@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>seattle.utils module &#8212; Seattle 0.1.0+untracked documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="seattle.needle module" href="seattle.needle.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-seattle.utils">
+<span id="seattle-utils-module"></span><h1>seattle.utils module<a class="headerlink" href="#module-seattle.utils" title="Permalink to this headline">¶</a></h1>
+<p>utils.py module proides functions to record rides of attractions.</p>
+<dl class="attribute">
+<dt id="seattle.utils.data_dir">
+<code class="sig-prename descclassname">seattle.utils.</code><code class="sig-name descname">data_dir</code><a class="headerlink" href="#seattle.utils.data_dir" title="Permalink to this definition">¶</a></dt>
+<dd><p>path to the data directory in the module.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>pathlib Path</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Google Python Style Guide: <a class="reference external" href="http://google.github.io/styleguide/pyguide.html">http://google.github.io/styleguide/pyguide.html</a>
+Much of this example comes from: <a class="reference external" href="https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html">https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html</a></p>
+<dl class="exception">
+<dt id="seattle.utils.EndPrecedesStartError">
+<em class="property">exception </em><code class="sig-prename descclassname">seattle.utils.</code><code class="sig-name descname">EndPrecedesStartError</code><span class="sig-paren">(</span><em class="sig-param">attraction</em>, <em class="sig-param">start</em>, <em class="sig-param">end</em><span class="sig-paren">)</span><a class="headerlink" href="#seattle.utils.EndPrecedesStartError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>This is a custom exception.  It’s useful if you might have
+similar situations in your code that you want to disallow.  Since
+you can’t predict every situation that might give rise to a
+disallowed situation, it’s helpful to create an exception.  Then,
+each block of code that gives rise to the exception can handle
+the exception differently.</p>
+<p>A classic case in point is updating a database or table with start
+and end times.  There’s nothing about a table or database’s
+engineering that prohibits a column named “end” from preceding
+a column named “start”.  Below is a function that updates the table
+for new records.  We don’t know yet whether the function will be
+called, so we don’t worry about how to handle the exception, we just
+raise it.</p>
+<p>Later, someone may write a function that calls add_ride
+based on user input in a web form.  They would want to catch the
+exception and pass the message in the web page itself.  On the other
+hand, someone might call add_ride to add a batch of rides for adding
+a batch of rides from a file.  They might want to catch the exception,
+keep adding rides for the rest of the batch, then report to the user
+all the illegal rides at once.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>attraction</strong> (<a class="reference internal" href="seattle.needle.html#seattle.needle.SeattleAttraction" title="seattle.needle.SeattleAttraction"><em>SeattleAttraction</em></a>) – Which attraction was attempted</p></li>
+<li><p><strong>start</strong> (<em>str</em><em> or </em><em>datetime.time</em>) – What start time was attempted</p></li>
+<li><p><strong>end</strong> (<em>str</em><em> or </em><em>datetime.time</em>) – What end time was attempted</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="seattle.utils.add_ride">
+<code class="sig-prename descclassname">seattle.utils.</code><code class="sig-name descname">add_ride</code><span class="sig-paren">(</span><em class="sig-param">records</em>, <em class="sig-param">attraction</em>, <em class="sig-param">person</em>, <em class="sig-param">start</em>, <em class="sig-param">end</em><span class="sig-paren">)</span><a class="headerlink" href="#seattle.utils.add_ride" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the records, for person to take the needle’s elevator
+up at start and down at end.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>records</strong> (<em>pandas DataFrame</em>) – The list of records of all rides</p></li>
+<li><p><strong>needle</strong> (<a class="reference internal" href="seattle.needle.html#seattle.needle.SeattleAttraction" title="seattle.needle.SeattleAttraction"><em>SeattleAttraction</em></a>) – Which needle (e.g. space)</p></li>
+<li><p><strong>person</strong> (<em>str</em>) – who is riding the elevator up and down</p></li>
+<li><p><strong>start</strong> (<em>str</em><em>, </em><em>pandas DateTime</em>) – time person embarked elevator</p></li>
+<li><p><strong>end</strong> (<em>end</em>) – time person returned to ground</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="#seattle.utils.EndPrecedesStartError" title="seattle.utils.EndPrecedesStartError"><strong>EndPrecedesStartError</strong></a> – </p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>New records DataFrame with record appended</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="seattle.utils.load_records">
+<code class="sig-prename descclassname">seattle.utils.</code><code class="sig-name descname">load_records</code><span class="sig-paren">(</span><em class="sig-param">rec_file='records.csv'</em><span class="sig-paren">)</span><a class="headerlink" href="#seattle.utils.load_records" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads records from the saved data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>rec_file</strong> (<em>str</em>) – records file to load.  If “new”, create new
+DataFrame with appropriate columns</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AssertionError if file's DataFrame does not have correct columns</strong> – </p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>pandas DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="seattle.utils.save_records">
+<code class="sig-prename descclassname">seattle.utils.</code><code class="sig-name descname">save_records</code><span class="sig-paren">(</span><em class="sig-param">df</em>, <em class="sig-param">rec_file='records.csv'</em><span class="sig-paren">)</span><a class="headerlink" href="#seattle.utils.save_records" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves records in df to rec_file.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Seattle</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">seattle</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="seattle.html">seattle package</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">seattle</a><ul>
+  <li><a href="seattle.html">seattle package</a><ul>
+      <li>Previous: <a href="seattle.needle.html" title="previous chapter">seattle.needle module</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Jake Stevens-Haas.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/seattle.utils.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

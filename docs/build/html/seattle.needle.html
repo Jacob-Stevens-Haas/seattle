@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>seattle.needle module &#8212; Seattle 0.1.0+untracked documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="seattle.utils module" href="seattle.utils.html" />
+    <link rel="prev" title="seattle.app module" href="seattle.app.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-seattle.needle">
+<span id="seattle-needle-module"></span><h1>seattle.needle module<a class="headerlink" href="#module-seattle.needle" title="Permalink to this headline">¶</a></h1>
+<p>The needle.py module contains a constructor for a SeattleAttraction
+(e.g. a space needle).  These attractions have a single method, ride().</p>
+<dl class="exception">
+<dt id="seattle.needle.AfterHoursError">
+<em class="property">exception </em><code class="sig-prename descclassname">seattle.needle.</code><code class="sig-name descname">AfterHoursError</code><span class="sig-paren">(</span><em class="sig-param">needle</em>, <em class="sig-param">early_or_late</em><span class="sig-paren">)</span><a class="headerlink" href="#seattle.needle.AfterHoursError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>An error for situations when someone tries to ride a needle when
+it’s closed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>needle</strong> (<a class="reference internal" href="#seattle.needle.SeattleAttraction" title="seattle.needle.SeattleAttraction"><em>SeattleAttraction</em></a>) – Which needle someone tried to ride.</p></li>
+<li><p><strong>early_or_late</strong> (<em>str</em>) – Either ‘early’ or ‘late’, to indicate
+which time constraint is violated.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
+<dt id="seattle.needle.SeattleAttraction">
+<em class="property">class </em><code class="sig-prename descclassname">seattle.needle.</code><code class="sig-name descname">SeattleAttraction</code><span class="sig-paren">(</span><em class="sig-param">needle_type='space'</em>, <em class="sig-param">opening='08:00:00'</em>, <em class="sig-param">closing='23:59:59'</em><span class="sig-paren">)</span><a class="headerlink" href="#seattle.needle.SeattleAttraction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class for all seattle-based needle attractions</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>needle_type</strong> (<em>str</em>) – Type of needle, e.g. “space”</p></li>
+<li><p><strong>opening</strong> (<em>str</em>) – Time needle opens to public, preferably in format
+<code class="docutils literal notranslate"><span class="pre">08:00:00</span></code></p></li>
+<li><p><strong>closing</strong> (<em>str</em>) – Time needle closes to public.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p><cite>space_needle = SeattleAttraction()</cite>
+<cite>grunge_needle = SeattleAttraction(‘Nirvana’, ‘00:00:01’, ‘03:59:59’)</cite></p>
+<dl class="method">
+<dt id="seattle.needle.SeattleAttraction.ride">
+<code class="sig-name descname">ride</code><span class="sig-paren">(</span><em class="sig-param">start</em>, <em class="sig-param">end</em><span class="sig-paren">)</span><a class="headerlink" href="#seattle.needle.SeattleAttraction.ride" title="Permalink to this definition">¶</a></dt>
+<dd><p>Validates that you can ride the needle from start to end,
+and returns the needle type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start</strong> (<em>str</em>) – when you try to start riding, preferably in format
+<code class="docutils literal notranslate"><span class="pre">08:00:00</span></code></p></li>
+<li><p><strong>end</strong> (<em>str</em>) – when you try to finish riding</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Seattle</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">seattle</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="seattle.html">seattle package</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">seattle</a><ul>
+  <li><a href="seattle.html">seattle package</a><ul>
+      <li>Previous: <a href="seattle.app.html" title="previous chapter">seattle.app module</a></li>
+      <li>Next: <a href="seattle.utils.html" title="next chapter">seattle.utils module</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Jake Stevens-Haas.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/seattle.needle.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
