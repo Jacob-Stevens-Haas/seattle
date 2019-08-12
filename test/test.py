@@ -26,25 +26,51 @@ block, e.g.
 if __name__=='__main__':
 ```
 
-You will see that in the code below.  But back to the matter at hand.
+You will see that in the code below.  But back to the matter at hand.  
+There's two approaches to testing: unit testing, which tests each 
+component of your code in isolation, and integration testing, which 
+tests large portions of interacting code.  The inaptly-named unittest
+module handles both.
+
+The unittest module allows a lot of flexibility in setting up and 
+organizing a heirarchy of different tests.  Tests can reside in 
+different modules (e.g. test1.py and test2.py), different test cases, or 
+the same test case.  The example below is fairly simple; it has two test
+cases: TestNeedleMethods and TestDataMethods.  These cases test every 
+function of utils.py and needle.py.  
+
+Why put do some tests go in different test cases?  Each test case can
+have a setUp() and a tearDown() method.  These create resources (e.g. files)
+or variables that tests in the case rely upon.  tearDown() destroys or 
+releases these resources.  Within a test case, tests should be able to 
+run in an arbitrary order, but can assume that setUp() has executed 
+previously.  Tests that do not rely on setUp() and tearDown() should 
+be in their own test case; that way, if setUp() causes an exception that
+prevents that case's tests from running correctly, the test module can
+still succeed at all tests in other test cases.
+
+The crux of each test is a call to unittest.TestCase.assertX() methods.
+When unittest runs, these methods allow unittest to catch and report
+exceptions that occur while smoothly continuing on to the next test.
+
+Each test case is a class that extends unittest.TestCase.  Each
+test is a class method beginning with the word `test_`.  
 
 * Python unittest module https://docs.python.org/3/library/unittest.html
-* 
+* https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/
 
 
 """
+# Standard library imports
 import unittest
-from pathlib import Path
 import os
-
+# Third party imports
 import pandas as pd
-
+# Local application/library-specific imports
 import seattle
 
 class TestNeedleMethods(unittest.TestCase):
     
-    def setUp(self):
-        pass
     def test_default_needle(self):
         attraction = seattle.needle.SeattleAttraction()
         self.assertEqual(attraction.needle, 'space needle')
@@ -76,8 +102,6 @@ class TestNeedleMethods(unittest.TestCase):
         attraction = seattle.needle.SeattleAttraction('grunge')
         self.assertEqual(attraction.ride('12:00:00','13:00:00'),
                           'grunge needle')
-    def tearDown(self):
-        pass        
 
 class TestDataMethods(unittest.TestCase):
     
