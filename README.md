@@ -4,6 +4,19 @@ It is also a self-guided tour of how to build a maintainable, professional pytho
 code.  To that end, each file includes comments to explain what it is for, how to
 modify it, and further resources to improve the reader's understanding.  
 
+We created this project as a launch platform for data science training.  There
+are many notebooks to teach you how to use boosted trees or how to display
+pretty outputs.  But so much of bad data science involves bad coding, and
+so much of good data science requires good code.  We're going to teach data science,
+but we'll do it with good code.
+
+We decided to  create a skeleton python distribution with all the bells and
+whistles.  We can make data science lessons as branches to the repository,
+with packages included in this distribution.  This format would force aspiring
+data scientists to use git and interact with python's packaging structure.  
+Moreover, it would force trainers to use git and python packaging at a 
+higher level of competency.
+
 Not every file is necessary in every project.  Some files may be more useful for 
 building a python package (e.g. \_\_init\_\_.py), others for applications (e.g.
 requirements.txt).  Regardless, you should be able to use the master branch of this
@@ -38,19 +51,13 @@ important client - a future incarnation of yourself.  That client's time is valu
 even if they don't own a tie or a pair of dress shoes.
 
 You've learned the first rule of programming.  If you want to write good code, don't 
-write a script or a notebook. Write libraries.  Write packages.  And in your highest
-level module, include:
-```
-if __name__=='main':
-    run(*sys.argv)
-```
-
+write a script or a notebook. Write libraries.  Write packages.
 
 ## Installation
 1. Set up git from the command line (or GitHub desktop) with your credentials
 1. Clone this repository
 1. Open Anaconda prompt (Helps to use PowerBroker Admin sometimes)
-1. create a virtual environment (read requirements.txt or environment.yml)
+1. create, activate, and setup a virtual environment (read requirements.txt or environment.yml)
 1. Run `pip install -e .` from the project directory.
 1. Test that everything is copacetic with `python -m unittest test/test.py`
 
@@ -64,7 +71,7 @@ if __name__=='main':
 1. .gitignore
 1. requirements.txt, environment.yml, and setup.py
 1. \_\_init\_\_.py
-1. notebooks/examply.ipynb
+1. notebooks/example.ipynb
 1. seattle/utils.py
 1. seattle/needle.py
 1. test/test.py
