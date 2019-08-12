@@ -1,4 +1,4 @@
-#Auto Documentation How-To
+# Auto Documentation How-To
 
 Everything in this folder is automatically generated, other than this file
 and index.html.  To port this to a new project, once sphinx is pip-installed,
