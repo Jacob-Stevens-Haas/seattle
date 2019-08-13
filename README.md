@@ -59,7 +59,7 @@ write a script or a notebook. Write libraries.  Write packages.
 1. Open Anaconda prompt (Helps to use PowerBroker Admin sometimes)
 1. create, activate, and setup a virtual environment (read requirements.txt or environment.yml)
 1. Run `pip install -e .` from the project directory.
-1. Test that everything is copacetic with `python -m unittest test/test.py`
+1. Test that everything is copacetic. `cd test`, then `python -m unittest test/test.py`
 
 ## Prerequisites
 * A basic knowledge of python (how to import modules, assign variables)
