@@ -1,3 +1,10 @@
+# I have a lot of trouble with conda creating virtual environments within
+# the BAH network due to SSL issues.  I have trouble outside the BAH network
+# due to issues with conda calling the pip subprocess.  I would recommend 
+# using the `python -m venv training` and `pip install -r requirements.txt`.
+# This file is not complete because I have a lot of trouble testing it.  
+# If you do choose to `conda create -f environment.yml`, follow it up with
+# `pip install -r requirements.txt`
 name: training
 channels:
   - defaults

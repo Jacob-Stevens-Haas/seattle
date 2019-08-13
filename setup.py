@@ -32,6 +32,13 @@ Alternatively, we can run
 The editable (-e) flag allows you edit this module's source code, and
 importing the module will always include the most recent saved version.
 
+When distributing a new version of your software, make sure to:
+* update your requirements.txt and/or your environment.yml
+* make new documentation with`docs/make html`
+* update the version info in this file according to 
+`semver<https://semver.org/>`
+ 
+
 Resources for more info:
 https://python-packaging.readthedocs.io/en/latest/minimal.html
 https://packaging.python.org/guides/distributing-packages-using-setuptools/
@@ -41,7 +48,7 @@ https://docs.python.org/3.7/distutils/setupscript.html
 from setuptools import setup
 
 setup(name='seattle',
-      version='0.1.0+untracked',
+      version='0.1.0-beta.1',
       description='Helps DS5K grads get better at the software dev side',
       url='https://github.boozallencsn.com/seattle/seattle',
       author='Seattle Data Science Team',
