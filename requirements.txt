@@ -1,3 +1,30 @@
+# This file defines what packages the project requires
+# It is used when creating a virtual environment with pip
+# It is not used when creating a virutal environment with
+# conda.  For that, check the environment.yml.  To create
+# a virtual environment with pip on Windows, run the command:
+# `python -m venv <environment name>
+# `<environment name>/Scripts/activate.bat`
+# `pip install -r requirements.txt`
+# On mac/linux, the second line should read:
+# `<environment name>/Scripts/activate.sh`
+
+# To leave the virtual environment, you need to run either
+# deactivate.bat or deactivate.sh, also in the Scripts
+# directory.
+
+# Because different versions of packages behave differently,
+# to make sure the project works the same for everyone,
+# you need to specify ("pin") the versions of each package.
+# Yes, this means that someone may have many copies of each
+# individual package, used for different projects, but that
+# is the accepted practice.  Think about it like different
+# sized socket wrenches.
+
+# To understand how package versions are numbered, check out
+# https://semver.org/
+# To understand how to format this file, check out
+# https://pip.readthedocs.io/en/1.1/requirements.html
 alabaster==0.7.12
 attrs==19.1.0
 Babel==2.7.0

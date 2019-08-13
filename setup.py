@@ -48,7 +48,7 @@ https://docs.python.org/3.7/distutils/setupscript.html
 from setuptools import setup
 
 setup(name='seattle',
-      version='0.1.0-beta.1',
+      version='0.1.0-beta.2',
       description='Helps DS5K grads get better at the software dev side',
       url='https://github.boozallencsn.com/seattle/seattle',
       author='Seattle Data Science Team',
