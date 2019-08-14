@@ -72,7 +72,7 @@ write a script or a notebook. Write libraries.  Write packages.
 1. requirements.txt, environment.yml, and setup.py
 1. \_\_init\_\_.py
 1. notebooks/example.ipynb
-1. Documentation: pages.github.boozallencsn.com/seattle/seattle
+1. [Documentation](https://pages.github.boozallencsn.com/seattle/seattle)
 1. seattle/utils.py
 1. seattle/needle.py
 1. test/test.py
