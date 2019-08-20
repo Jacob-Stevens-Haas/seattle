@@ -80,8 +80,7 @@ write a script or a notebook. Write libraries.  Write packages.
 1. CONTRIBUTING.md
 1. vis.py
 
-There's no need to look in the data/ and notebooks/ directories, as their contents
-are gitignored.
+Except for example files, the contents of data/ and notebooks/ are gitignored.
 
 ## How to write these .md files
 [Good](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)

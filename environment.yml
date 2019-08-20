@@ -2,9 +2,10 @@
 # the BAH network due to SSL issues.  I have trouble outside the BAH network
 # due to issues with conda calling the pip subprocess.  I would recommend 
 # using the `python -m venv training` and `pip install -r requirements.txt`.
-# This file is not complete because I have a lot of trouble testing it.  
-# If you do choose to `conda create -f environment.yml`, follow it up with
-# `pip install -r requirements.txt`
+# If you do choose to a conda virtual environment instead of a local venv,
+# run `conda create -f environment.yml`.  In any script that you see
+# `training\Scripts\activate.bat`, change it to `conda activate training`.
+# Do the same for virtual environment deactivation.
 name: training
 channels:
   - defaults
@@ -20,3 +21,69 @@ dependencies:
     - dash==1.0.2
     - matplotlib==3.1.1
     - sphinx==2.1.2
+    - alabaster==0.7.12
+    - attrs==19.1.0
+    - Babel==2.7.0
+    - backcall==0.1.0
+    - certifi==2019.6.16
+    - chardet==3.0.4
+    - Click==7.0
+    - cloudpickle==1.2.1
+    - colorama==0.4.1
+    - cycler==0.10.0
+    - dash==1.0.2
+    - dash-core-components==1.0.0
+    - dash-html-components==1.0.0
+    - dash-renderer==1.0.0
+    - dash-table==4.0.2
+    - decorator==4.4.0
+    - docutils==0.15.2
+    - Flask==1.1.1
+    - Flask-Compress==1.4.0
+    - idna==2.8
+    - imagesize==1.1.0
+    - ipykernel==5.1.2
+    - ipython==7.7.0
+    - ipython-genutils==0.2.0
+    - itsdangerous==1.1.0
+    - jedi==0.15.0
+    - Jinja2==2.10.1
+    - jupyter-client==5.3.1
+    - jupyter-core==4.5.0
+    - kiwisolver==1.1.0
+    - MarkupSafe==1.1.1
+    - matplotlib==3.1.1
+    - numpy==1.17.0
+    - packaging==19.1
+    - pandas==0.25.0
+    - parso==0.5.1
+    - pickleshare==0.7.5
+    - plotly==4.0.0
+    - pockets==0.7.2
+    - prompt-toolkit==2.0.9
+    - Pygments==2.4.2
+    - pyparsing==2.4.2
+    - python-dateutil==2.8.0
+    - pytz==2019.2
+    - PyYAML==5.1.2
+    - pyzmq==18.1.0
+    - requests==2.22.0
+    - retrying==1.3.3
+    - scipy==1.3.0
+    - six==1.12.0
+    - snowballstemmer==1.9.0
+    - Sphinx==2.1.2
+    - sphinxcontrib-applehelp==1.0.1
+    - sphinxcontrib-devhelp==1.0.1
+    - sphinxcontrib-htmlhelp==1.0.2
+    - sphinxcontrib-jsmath==1.0.1
+    - sphinxcontrib-napoleon==0.7
+    - sphinxcontrib-qthelp==1.0.2
+    - sphinxcontrib-serializinghtml==1.1.3
+    - spyder-kernels==0.5.1
+    - tornado==6.0.3
+    - traitlets==4.3.2
+    - urllib3==1.25.3
+    - wcwidth==0.1.7
+    - Werkzeug==0.15.5
+    - xlrd==1.2.0

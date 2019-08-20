@@ -7,7 +7,7 @@
 # `<environment name>/Scripts/activate.bat`
 # `pip install -r requirements.txt`
 # On mac/linux, the second line should read:
-# `<environment name>/Scripts/activate.sh`
+# `source <environment name>/Scripts/activate`
 
 # To leave the virtual environment, you need to run either
 # deactivate.bat or deactivate.sh, also in the Scripts
