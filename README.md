@@ -1,4 +1,4 @@
-# DS5K to Python Data Science Developer
+# "Hey I'm a Mathematician" to Python Data Science Developer
 This repository is an example of what a python package or project should include.
 It is also a self-guided tour of how to build a maintainable, professional python
 code.  To that end, each file includes comments to explain what it is for, how to
