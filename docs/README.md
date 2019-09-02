@@ -52,9 +52,14 @@ Change '.' to navigate from the docs/ folder to your package folder (likely '..'
 11. Add `sphinx-apidoc -f -e -o source ../seattle` to make.bat after `@echo off`.  If
 you add other files that you don't yet want to document, add their path from docs/
 to the end of the command, separating them with commas if more than one excluded
-file.  Wildcards (e.g. ?, * [include] [!exclude]) are allowed in the path (For windows,
-at least. If on Unix/Linux/Mac, add this command somewhere at the beginning of the 
-Makefile.
+file.  Wildcards (e.g. ?, * \[include\] \[!exclude\]) are allowed in the path (For windows,
+at least. If on Unix/Linux/Mac, instead add
+```
+target: prerequisites
+	sphinx-apidoc -f -e -o source .. ../setup.py
+```
+at the beginning of the Makefile.  See [sphinx-apidoc][api] documentation.
+[api]: https://www.sphinx-doc.org/en/master/man/sphinx-apidoc.html
 
 sphinx-apidoc is a program that turns python packages into reStructured text files
 (.rst).  sphinx-build, which you also see in make.bat, then turns the rst files into 

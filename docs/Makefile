@@ -1,6 +1,9 @@
 # Minimal makefile for Sphinx documentation
 #
 
+target: prerequisites
+	sphinx-apidoc -f -e -o source .. ../setup.py
+
 # You can set these variables from the command line, and also
 # from the environment for the first two.
 SPHINXOPTS    ?=
