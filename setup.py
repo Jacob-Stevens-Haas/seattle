@@ -48,12 +48,12 @@ https://docs.python.org/3.7/distutils/setupscript.html
 from setuptools import setup
 
 setup(name='seattle',
-      version='0.1.0-beta.3',
+      version='0.1.0-rc1',
       description='Helps DS5K grads get better at the software dev side',
-      url='https://github.boozallencsn.com/seattle/seattle',
+      url='https://github.com/Jake-Stevens-Haas/seattle',
       author='Seattle Data Science Team',
-      author_email='stevens-haas_jacob@bah.com',
-      license='Internal',
+      author_email='jacob.stevens.haas@gmail.com',
+      license='MIT',
       packages=['seattle'], # Packages & subpackages for the directory
                               # containintby setup.py
       py_modules=['needle', 'utils', 'app'], #This package's modules

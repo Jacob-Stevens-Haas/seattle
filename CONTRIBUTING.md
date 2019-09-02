@@ -25,7 +25,7 @@ stakeholders.
 However, we still have to check that the changes you're recommending work.
 1. Push to your fork and [submit a pull request][pr].
 
-[pr]: https://github.boozallencsn.com/seattle/seattle/compare/
+[pr]: https://github.com/Jake-Stevens-Haas/seattle/compare/
 
 At this point you're waiting on us. We like to at least comment on pull requests
 within three business days (and, typically, one business day). We may suggest
@@ -42,9 +42,8 @@ Some things that will increase the chance that your pull request is accepted:
 [commit]: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
 
 ## Code of Conduct
-Normal open source codes of conduct have injunctions to respect others.  While we,
-by virtue of working at the same firm, are all bound more tightly than random 
-internet collaborators, it's still appropriate to cite the [contributor covenant][covenant]:
+Normal open source codes of conduct have injunctions to respect others.  It's
+ appropriate to cite the [contributor covenant][covenant]:
 
     In the interest of fostering an open and welcoming environment, we as
     contributors and maintainers pledge to making participation in our project
