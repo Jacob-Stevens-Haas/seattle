@@ -14,6 +14,8 @@ You may have to spend a lot of time getting familiar with `git push --force`,
  applies to sphinx pre-2.0, which gave a lot more options for
  `sphinx-quickstart`.
 
+Update: I posted a better, more complete guide [on medium](https://medium.com/@jacob.stevens.haas/sphinx-2-0-tutorial-76c47dcbef70)
+
 1. Enter project directory
 2. enter virtual environment
 3. If not already installed, pip install sphinx and sphinxcontrib.napoleon
