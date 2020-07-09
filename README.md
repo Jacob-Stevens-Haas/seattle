@@ -5,21 +5,19 @@ code.  To that end, each file includes comments to explain what it is for, how t
 modify it, and further resources to improve the reader's understanding.  
 
 We created this project as a launch platform for data science training.  There
-are many notebooks to teach you how to use boosted trees or how to display
+are many notebooks in the wild to teach you how to use boosted trees or how to display
 pretty outputs.  But so much of bad data science involves bad coding, and
-so much of good data science requires good code.  We're going to teach data science,
-but we'll do it with good code.
+so much of good data science requires good code.  If we're going to teach data science,
+we'll have to do it with good code.
 
 We decided to  create a skeleton python distribution with all the bells and
-whistles.  We can make data science lessons as branches to the repository,
+whistles.  If in the future we so desire, we can make data science lessons as branches to the repository,
 with packages included in this distribution.  This format would force aspiring
 data scientists to use git and interact with python's packaging structure.  
 Moreover, it would force trainers to use git and python packaging at a
 higher level of competency.
 
-Not every file is necessary in every project.  Some files may be more useful for
-building a python package (e.g. \_\_init\_\_.py), others for applications (e.g.
-requirements.txt).  Regardless, you should be able to use the master branch of this
+You should be able to use the master branch of this
 repo as a starting point for any python project.  
 
 ## Why? Your Most Important Client
